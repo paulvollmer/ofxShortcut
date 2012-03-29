@@ -55,22 +55,45 @@ void testApp::keyPressed(int key){
 	
 	/*
 	 * shortcut list.
-	 * Here you can place your shortcut functions.
+	 * Here you can place your shortcut functions at the
+	 * specivic array position.
+	 *
+	 * Shortcut and description here.
 	 */
 	if(key == shortcut.key[0]){
-		cout << "key: " << shortcut.key[0] << ", description: " << shortcut.description[0] << endl;
+		cout << shortcut.description[0] << endl;
+		/* Shortcut function and description here. */
 		
-		/* shortcut function here. */
 	}
+	
+	/*
+	 * Shortcut and description here.
+	 */
 	else if(key == shortcut.key[1]) {
-		/* shortcut function here. */
+		cout << shortcut.description[1] << endl;
+		/* Shortcut function and description here. */
+		
 	}
+	
+	/*
+	 * Shortcut and description here.
+	 */
 	else if(key == shortcut.key[2]) {
-		/* shortcut function here. */
+		cout << shortcut.description[2] << endl;
+		/* Shortcut function and description here. */
+	
 	}
+	
+	/*
+	 * Shortcut and description here.
+	 */
 	else if(key == shortcut.key[3]) {
-		/* shortcut function here. */
+		cout << shortcut.description[3] << endl;
+		/* Shortcut function and description here. */
+	
 	}
+	
+	
 	
 	//shortcut.keyEvent(key);
 

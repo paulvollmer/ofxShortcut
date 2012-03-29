@@ -36,7 +36,7 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 	
-	shortcut.init("shortcuts.xml", "shortcut:key");
+	shortcut.init("shortcuts.xml");
 	
 }
 
@@ -53,12 +53,26 @@ void testApp::draw(){
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
 	
-	for(int i=67; i<80; i++) {
-		if(key == i){
-			cout << "keyPressed OK key: " << key << endl;
-		}
+	/*
+	 * shortcut list.
+	 * Here you can place your shortcut functions.
+	 */
+	if(key == shortcut.key[0]){
+		cout << "key: " << shortcut.key[0] << ", description: " << shortcut.description[0] << endl;
+		
+		/* shortcut function here. */
 	}
-	shortcut.keyEvent(key);
+	else if(key == shortcut.key[1]) {
+		/* shortcut function here. */
+	}
+	else if(key == shortcut.key[2]) {
+		/* shortcut function here. */
+	}
+	else if(key == shortcut.key[3]) {
+		/* shortcut function here. */
+	}
+	
+	//shortcut.keyEvent(key);
 
 }
 

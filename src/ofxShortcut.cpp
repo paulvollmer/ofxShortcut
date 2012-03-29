@@ -51,7 +51,7 @@ namespace wng {
 	 * display
 	 * Display our axis cross.
 	 */
-	void ofxShortcut::init(string file, string xmlTagKey){
+	void ofxShortcut::init(string file){
 		
 		/*
 		 * we load our xml file
@@ -76,20 +76,6 @@ namespace wng {
 		 * Parse our loaded xml file and save key, description values to variable.
 		 */
 		parseXml("shortcut", "key", "description");
-		
-		
-		
-		/*for(int i=0; i<10; i++){
-			scut[i] = i;
-			cout << scut[i] << endl;
-		}*/
-		
-		
-		
-		
-		#ifdef DEBUG
-			cout << "[ofxShortcut] init() Ready!" << endl;
-		#endif
 		
 	}
 	
@@ -125,22 +111,18 @@ namespace wng {
 				string tempDesc = xml.getValue(mainTag+":"+descTag, "default description", i);
 				
 				/* save to shortcut vector */
-				shortcut.push_back(i);
-				shortcut[i] = tempKey;
+				key.push_back(i);
+				key[i] = tempKey;
 				/* save to shortcut vector */
 				description.push_back("ff");
 				description[i] = tempDesc;
 				
 				#ifdef DEBUG
-					cout << "[ofxShortcut] parseXml() [" << i << "] key: " << shortcut[i] << ", dsc: " << description[i] << endl;
+					cout << "[ofxShortcut] parseXml() [" << i << "] key: " << key[i] << ", dsc: " << description[i] << endl;
 				#endif
 			
 			}
 		}
-		
-		#ifdef DEBUG
-			cout << "[ofxShortcut] parseXml() Ready!" << endl;
-		#endif
 		
 	}
 	

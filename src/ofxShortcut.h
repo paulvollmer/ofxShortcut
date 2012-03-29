@@ -34,8 +34,6 @@
 
 #define DEBUG
 
-#define NUM_SCUT 10
-
 
 
 
@@ -53,14 +51,14 @@ namespace wng {
 		/*
 		 * Methods
 		 */
-		void init(string file, string xmlTagKey);
-		void parseXml(string mainTag, string keytag, string descTag);
+		void init(string file);
+		void parseXml(string mainTag, string keyTag, string descTag);
 		void keyEvent(int key);
 		
 		ofxXmlSettings xml;
 		
 		/* array to store shortcut key integer */
-		vector<int> shortcut;
+		vector<int> key;
 		vector<string> description;
 		
 		

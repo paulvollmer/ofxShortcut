@@ -1,0 +1,24 @@
+<install>
+    <name>ofxShortcut</name>
+    <version>0.1.2</version>
+    <author>Paul Vollmer</author>
+    <url>http://www.wng.cc</url>
+    
+    <add>	
+        <!-- ===================================================================== -->
+        <!-- ========================== add per project using this addon ========= -->
+        <!-- ===================================================================== -->
+        
+        <src>
+            <folder name="addons/ofxShortcut/src">	
+                <file>../../../addons/ofxShortcut/src/ofxCsv.h</file>
+                <file>../../../addons/ofxShortcut/src/ofxCsv.cpp</file>
+            </folder>
+        </src>
+        
+        <include>
+            <path>../../../addons/ofxShortcut/src</path>
+        </include>
+    </add>
+
+</install>

@@ -12,7 +12,7 @@ API Overview:
   
 ofxShortcut is developed by Paul Vollmer http://wrong-entertainment.com/  
 The ofxShortcut Project Page is Hosted at ...  
-Check out for New released Version at https://github.com/wrongentertainment/ofxCsv/  
+Check out for New released Version at https://github.com/wrongentertainment/ofxShortcut/  
 
 This file is part of ofxShortcut.  
 Author: Paul Vollmer, Modified: 2012.03.29  

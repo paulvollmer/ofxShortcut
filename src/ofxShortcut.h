@@ -53,7 +53,8 @@ namespace wng {
 		 */
 		void init(string file);
 		void parseXml(string mainTag, string keyTag, string descTag);
-		void keyEvent(int key);
+		bool checkKey(int k, int i);
+		
 		
 		ofxXmlSettings xml;
 		

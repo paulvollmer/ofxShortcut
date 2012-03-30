@@ -48,8 +48,11 @@ namespace wng {
 	
 	
 	/**
-	 * display
-	 * Display our axis cross.
+	 * init
+	 * Initialize our shortcut xml file and parse it.
+	 *
+	 * @param file
+	 *        Name of xml File.
 	 */
 	void ofxShortcut::init(string file){
 		
@@ -83,11 +86,16 @@ namespace wng {
 	
 	
 	
-	/*
+	/**
 	 * parseXml to check how many shortcut tags exist.
 	 * save all shortcut-keys, -description to array.
 	 *
-	 *
+	 * @param mainTag
+	 *        The main xml tag.
+	 * @param keyTag
+	 *        The key xml tag.
+	 * @param descTag
+	 *        The description xml tag.
 	 */
 	void ofxShortcut::parseXml(string mainTag, string keyTag, string descTag){
 		
@@ -118,7 +126,7 @@ namespace wng {
 				description[i] = tempDesc;
 				
 				#ifdef DEBUG
-					cout << "[ofxShortcut] parseXml() [" << i << "] key: " << key[i] << ", dsc: " << description[i] << endl;
+					cout << "[ofxShortcut] parseXml() [" << i << "] key: " << key[i] << ", description: " << description[i] << endl;
 				#endif
 			
 			}
@@ -127,14 +135,22 @@ namespace wng {
 	}
 	
 	
-	/*
-	 * keyEvent
+	
+	/**
+	 * checkKey
+	 *
+	 * @param mainTag
+	 *        The main xml tag.
+	 * @param mainTag
+	 *        The main xml tag.
 	 */
-	void ofxShortcut::keyEvent(int key){
+	bool ofxShortcut::checkKey(int k, int i){
 		
-		#ifdef DEBUG
-			cout << "[ofxShortcut] keyEvent key: " << key << endl;
-		#endif
+		if(k == key[i]){
+			return true;
+		} else {
+			return false;
+		}
 		
 	}
 	

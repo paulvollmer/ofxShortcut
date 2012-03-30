@@ -52,13 +52,14 @@ namespace wng {
 		 * Methods
 		 */
 		void init(string file);
-		void parseXml(string mainTag, string keyTag, string descTag);
+		void parseXml(string mainTag, string idTag, string keyTag, string descTag);
 		bool checkKey(int k, int i);
 		
 		
 		ofxXmlSettings xml;
 		
 		/* array to store shortcut key integer */
+		vector<int> ident;
 		vector<int> key;
 		vector<string> description;
 		

@@ -1,16 +1,20 @@
 <shortcut>
-	<key>101</key>
+	<id>1001</id>
+	<key>97</key>
 	<description>Shortcut: a</description>
 </shortcut>
 <shortcut>
+	<id>1002</id>
 	<key>98</key>
 	<description>Shortcut: b</description>
 </shortcut>
 <shortcut>
+	<id>1003</id>
 	<key>99</key>
 	<description>Shortcut: c</description>
 </shortcut>
 <shortcut>
+	<id>1004</id>
 	<key>100</key>
 	<description>Shortcut: d</description>
 </shortcut>

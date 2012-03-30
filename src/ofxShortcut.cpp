@@ -67,18 +67,35 @@ namespace wng {
 		}else{
 			#ifdef DEBUG
 				cout << "[ofxShortcut] init() XML File unable to load <" << file << ">." << endl;
-				cout << "                     Check data/ folder" << endl;
-			
-			// TODO: create an empty file.
-			
+				cout << "                     ofxShortcut start creating default shortcut settings file." << endl;
 			#endif
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			// create an empty file.
+			/*xml.addTag("shortcut");
+			xml.saveFile("mySettings.xml");
+			cour << "settings saved to xml!" << endl;
+			*/
+			
+			
+			
+			
+			
+			
 		}
 		
 		
 		/*
 		 * Parse our loaded xml file and save key, description values to variable.
 		 */
-		parseXml("shortcut", "key", "description");
+		parseXml("shortcut", "id", "key", "description");
 		
 	}
 	
@@ -97,7 +114,7 @@ namespace wng {
 	 * @param descTag
 	 *        The description xml tag.
 	 */
-	void ofxShortcut::parseXml(string mainTag, string keyTag, string descTag){
+	void ofxShortcut::parseXml(string mainTag, string idTag, string keyTag, string descTag){
 		
 		/* 
 		 * lets see how many <STROKE> </STROKE> tags there are in the xml file
@@ -115,9 +132,19 @@ namespace wng {
 		if(totalShortcut > 0){
 			for(int i=0; i<totalShortcut; i++){
 				
-				int tempKey  = xml.getValue(mainTag+":"+keyTag,  0, i);
+				/*
+				 * save xml values to vector variable.
+				 */
+				int    tempId   = xml.getValue(mainTag+":"+idTag,   i, i);
+				int    tempKey  = xml.getValue(mainTag+":"+keyTag,  0x11120119, i);
 				string tempDesc = xml.getValue(mainTag+":"+descTag, "default description", i);
 				
+				
+				cout << "tempId: " << tempId << endl;
+				
+				/* save to shortcut vector */
+				ident.push_back(i);
+				ident[i] = tempId;				
 				/* save to shortcut vector */
 				key.push_back(i);
 				key[i] = tempKey;
@@ -126,7 +153,7 @@ namespace wng {
 				description[i] = tempDesc;
 				
 				#ifdef DEBUG
-					cout << "[ofxShortcut] parseXml() [" << i << "] key: " << key[i] << ", description: " << description[i] << endl;
+					cout << "[ofxShortcut] parseXml() [" << i << "] [id: " << ident[i] << "] [key: " << key[i] << "] [description: " << description[i] << "]" << endl;
 				#endif
 			
 			}

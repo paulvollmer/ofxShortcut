@@ -3,7 +3,9 @@
 
 ## Readme  
 General information about ofxShortcut.  
-
+  
+AT THE MOMENT THIS ADDON IS NOT READY. DEVELOPEMENT...  
+  
 ofxShortcut is an addons for [openFrameworks](http://www.openframeworks.cc/)  
   
 API Overview:  
@@ -15,7 +17,7 @@ The ofxShortcut Project Page is Hosted at ...
 Check out for New released Version at https://github.com/wrongentertainment/ofxShortcut/  
 
 This file is part of ofxShortcut.  
-Author: Paul Vollmer, Modified: 2012.03.29  
+Author: Paul Vollmer, Modified: 2012.04.01  
 
 
 ## Versioning 

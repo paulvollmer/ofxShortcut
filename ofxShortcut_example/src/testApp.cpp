@@ -49,10 +49,27 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
 	
+	//cout << ofGetKeyPressed(97) << endl;
+	
 }
 
 //--------------------------------------------------------------
 void testApp::keyPressed(int key){
+	
+	
+	cout << "key: " << key << endl;
+	
+	
+	if(key == OF_KEY_ALT) {
+		cout << "OF_KEY_ALT" << endl;
+	}
+	else if(key == OF_KEY_CTRL) {
+		cout << "OF_KEY_CTRL" << endl;
+	}
+	else if(key == OF_KEY_SHIFT) {
+		cout << "OF_KEY_SHIFT" << endl;
+	}
+	
 	
 	/*
 	 * shortcut list.
@@ -70,7 +87,7 @@ void testApp::keyPressed(int key){
 	/*
 	 * Shortcut and description here.
 	 */
-	else if(key == shortcut.key[1]) {
+	else if(shortcut.checkKey(key, 1)) {
 		cout << shortcut.description[1] << endl;
 		/* Shortcut function and description here. */
 		
@@ -79,7 +96,7 @@ void testApp::keyPressed(int key){
 	/*
 	 * Shortcut and description here.
 	 */
-	else if(key == shortcut.key[2]) {
+	else if(shortcut.checkKey(key, 2)) {
 		cout << shortcut.description[2] << endl;
 		/* Shortcut function and description here. */
 	
@@ -88,7 +105,7 @@ void testApp::keyPressed(int key){
 	/*
 	 * Shortcut and description here.
 	 */
-	else if(key == shortcut.key[3]) {
+	else if(shortcut.checkKey(key, 3)) {
 		cout << shortcut.description[3] << endl;
 		/* Shortcut function and description here. */
 	

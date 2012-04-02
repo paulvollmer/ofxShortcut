@@ -29,7 +29,6 @@
 
 #pragma once
 
-//#include "ofMain.h"
 #include "ofxXmlSettings.h"
 
 #define DEBUG

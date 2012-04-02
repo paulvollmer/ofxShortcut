@@ -109,6 +109,8 @@ namespace wng {
 	 *
 	 * @param mainTag
 	 *        The main xml tag.
+	 * @param idTag
+	 *        The ident xml tag.
 	 * @param keyTag
 	 *        The key xml tag.
 	 * @param descTag
@@ -139,9 +141,6 @@ namespace wng {
 				int    tempKey  = xml.getValue(mainTag+":"+keyTag,  0x11120119, i);
 				string tempDesc = xml.getValue(mainTag+":"+descTag, "default description", i);
 				
-				
-				cout << "tempId: " << tempId << endl;
-				
 				/* save to shortcut vector */
 				ident.push_back(i);
 				ident[i] = tempId;				
@@ -149,11 +148,11 @@ namespace wng {
 				key.push_back(i);
 				key[i] = tempKey;
 				/* save to shortcut vector */
-				description.push_back("ff");
+				description.push_back("default");
 				description[i] = tempDesc;
 				
 				#ifdef DEBUG
-					cout << "[ofxShortcut] parseXml() [" << i << "] [id: " << ident[i] << "] [key: " << key[i] << "] [description: " << description[i] << "]" << endl;
+					cout << "[ofxShortcut] parseXml() [" << i << "] [id: " << ident[i] << "] [key: " << key[i] << "] [description: " << description[i] << "]" <<  endl;
 				#endif
 			
 			}

@@ -3,7 +3,7 @@
  * http://www.wng.cc
  * 
  * 
- * Copyright (c) 2011-2012 Paul Vollmer
+ * Copyright (c) 2012 Paul Vollmer
  *
  * ofxShortcut.cpp is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -21,7 +21,7 @@
  * Boston, MA  02111-1307  USA
  * 
  * @author      Paul Vollmer
- * @modified    2012.03.29
+ * @modified    2012.04.02
  * @version     0.1.0
  */
 
@@ -48,18 +48,23 @@ namespace wng {
 	
 	
 	/**
-	 * init
 	 * Initialize our shortcut xml file and parse it.
 	 *
 	 * @param file
 	 *        Name of xml File.
+	 * @param mainTag
+	 *        The main xml tag.
+	 * @param idTag
+	 *        The ident xml tag.
+	 * @param keyTag
+	 *        The key xml tag.
+	 * @param descTag
+	 *        The description xml tag.
 	 */
-	void ofxShortcut::init(string file){
+	void ofxShortcut::init(string file, string mainTag, string idTag, string keyTag, string descTag){
 		
-		/*
-		 * we load our xml file
-		 * Examlple from openFrameworks xmlSettingsExample
-		 */
+		/* we load our xml file
+		 * Examlple from openFrameworks xmlSettingsExample */
 		if( xml.loadFile(file) ){
 			#ifdef DEBUG 
 				cout << "[ofxShortcut] init() XML File <" << file << "> loaded!" << endl;
@@ -70,34 +75,30 @@ namespace wng {
 				cout << "                     ofxShortcut start creating default shortcut settings file." << endl;
 			#endif
 			
-			
-			
-			
-			
-			
-			
-			
-			
 			// create an empty file.
 			/*xml.addTag("shortcut");
-			xml.saveFile("mySettings.xml");
-			cour << "settings saved to xml!" << endl;
-			*/
-			
-			
-			
-			
-			
+			 xml.saveFile("mySettings.xml");
+			 cour << "settings saved to xml!" << endl;
+			 */
 			
 		}
 		
-		
-		/*
-		 * Parse our loaded xml file and save key, description values to variable.
-		 */
-		parseXml("shortcut", "id", "key", "description");
+		/* Parse our loaded xml file and save key, description values to variable. */
+		parseXml(mainTag, idTag, keyTag, descTag);
 		
 	}
+	
+	
+	
+	/**
+	 * Init description below.
+	 */
+	void ofxShortcut::init(string file){
+		
+		init(file, "shortcut", "id", "key", "description");
+		
+	}
+	
 	
 	
 	
@@ -118,7 +119,7 @@ namespace wng {
 	 */
 	void ofxShortcut::parseXml(string mainTag, string idTag, string keyTag, string descTag){
 		
-		/* 
+		/*
 		 * lets see how many <STROKE> </STROKE> tags there are in the xml file
 		 */
 		int totalShortcut = xml.getNumTags(mainTag);
@@ -164,6 +165,15 @@ namespace wng {
 	
 	
 	
+	/**
+	 * bitmapList draw a list of all shortcut.
+	 * For this we read our ident-, key-, desc-vector.
+	 *
+	 * @param x
+	 *        X position of the list.
+	 * @param y
+	 *        Y position of the list.
+	 */
 	void ofxShortcut::bitmapList(int x, int y){
 		
 		string temp = "SHORTCUT LIST:\n";

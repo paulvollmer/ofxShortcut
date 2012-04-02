@@ -36,8 +36,10 @@
 //--------------------------------------------------------------
 void testApp::setup(){
 	
-	// Load xml file and initialize shortcut class.
+	/* Load xml file and initialize shortcut class. */
 	shortcut.init("shortcuts.xml");
+	/* Optional you can customize the main-, id-, key- and description-tag of the xml file. */
+	//shortcut.init("shortcuts.xml", "shortcut", "id", "key", "description");
 	
 }
 
@@ -51,7 +53,7 @@ void testApp::draw(){
 	
 	//cout << ofGetKeyPressed(97) << endl;
 	
-	// Display a Shortcut List.
+	/* Display a Shortcut List. */
 	ofSetColor(0);
 	shortcut.bitmapList(100, 100);
 	
@@ -74,40 +76,32 @@ void testApp::keyPressed(int key){
 		cout << "OF_KEY_SHIFT" << endl;
 	}
 	
-	/*
-	 * Shortcut List.
+	/* Shortcut List.
 	 * Here you can place your shortcut functions at the
 	 * specivic array position.
 	 *
-	 * Shortcut and description here.
-	 */
+	 * Shortcut and description here. */
 	if(shortcut.checkKey(key, 0)){
 		cout << shortcut.description[0] << endl;
 		/* Shortcut function and description here. */
 		
 	}
 	
-	/*
-	 * Shortcut and description here.
-	 */
+	/* Shortcut and description here. */
 	else if(shortcut.checkKey(key, 1)) {
 		cout << shortcut.description[1] << endl;
 		/* Shortcut function and description here. */
 		
 	}
 	
-	/*
-	 * Shortcut and description here.
-	 */
+	/* Shortcut and description here. */
 	else if(shortcut.checkKey(key, 2)) {
 		cout << shortcut.description[2] << endl;
 		/* Shortcut function and description here. */
 	
 	}
 	
-	/*
-	 * Shortcut and description here.
-	 */
+	/* Shortcut and description here. */
 	else if(shortcut.checkKey(key, 3)) {
 		cout << shortcut.description[3] << endl;
 		/* Shortcut function and description here. */

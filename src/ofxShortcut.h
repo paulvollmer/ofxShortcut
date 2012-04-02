@@ -21,7 +21,7 @@
  * Boston, MA  02111-1307  USA
  * 
  * @author      Paul Vollmer
- * @modified    2012.03.29
+ * @modified    2012.04.02
  * @version     0.1.0
  */
 
@@ -51,12 +51,14 @@ namespace wng {
 		/*
 		 * Methods
 		 */
+		void init(string file, string mainTag, string idTag, string keyTag, string descTag);
 		void init(string file);
 		void parseXml(string mainTag, string idTag, string keyTag, string descTag);
 		void bitmapList(int x, int y);
 		bool checkKey(int k, int i);
 		
 		
+		/* openFrameworks xmlSettings addon */
 		ofxXmlSettings xml;
 		
 		/* array to store shortcut key integer */
@@ -64,12 +66,6 @@ namespace wng {
 		vector<int> key;
 		vector<string> description;
 		
-		
-	private:
-		/*
-		 * Variables
-		 */
-		//int x;
 		
 	};
 	

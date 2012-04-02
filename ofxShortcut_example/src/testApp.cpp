@@ -51,6 +51,10 @@ void testApp::draw(){
 	
 	//cout << ofGetKeyPressed(97) << endl;
 	
+	// Display a Shortcut List.
+	ofSetColor(0);
+	shortcut.bitmapList(100, 100);
+	
 }
 
 //--------------------------------------------------------------
@@ -70,9 +74,8 @@ void testApp::keyPressed(int key){
 		cout << "OF_KEY_SHIFT" << endl;
 	}
 	
-	
 	/*
-	 * shortcut list.
+	 * Shortcut List.
 	 * Here you can place your shortcut functions at the
 	 * specivic array position.
 	 *

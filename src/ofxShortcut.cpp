@@ -162,6 +162,25 @@ namespace wng {
 	
 	
 	
+	
+	
+	void ofxShortcut::bitmapList(int x, int y){
+		
+		string temp = "SHORTCUT LIST:\n";
+		
+		for(int i=0; i<ident.size(); i++){
+			char c = key[i];
+			temp += "KEY: " + ofToString(c) + " (" + ofToString(key[i]) + ")   DESC: " + description[i] + "   ID: " + ofToString(ident[i]) + "\n";
+		}
+		
+		ofDrawBitmapString(temp, x, y);
+		
+	}
+	
+	
+	
+	
+	
 	/**
 	 * checkKey
 	 *

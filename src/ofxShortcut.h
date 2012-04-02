@@ -29,6 +29,7 @@
 
 #pragma once
 
+#include "ofMain.h"
 #include "ofxXmlSettings.h"
 
 #define DEBUG
@@ -52,6 +53,7 @@ namespace wng {
 		 */
 		void init(string file);
 		void parseXml(string mainTag, string idTag, string keyTag, string descTag);
+		void bitmapList(int x, int y);
 		bool checkKey(int k, int i);
 		
 		

@@ -69,6 +69,9 @@ namespace wng {
 			#ifdef DEBUG 
 				cout << "[ofxShortcut] init() XML File <" << file << "> loaded!" << endl;
 			#endif
+			
+			/* Parse our loaded xml file and save key, description values to variable. */
+			parseXml(mainTag, idTag, keyTag, descTag);
 		}else{
 			#ifdef DEBUG
 				cout << "[ofxShortcut] init() XML File unable to load <" << file << ">." << endl;
@@ -82,9 +85,6 @@ namespace wng {
 			 */
 			
 		}
-		
-		/* Parse our loaded xml file and save key, description values to variable. */
-		parseXml(mainTag, idTag, keyTag, descTag);
 		
 	}
 	

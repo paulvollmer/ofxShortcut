@@ -21,8 +21,8 @@
  * Boston, MA  02111-1307  USA
  * 
  * @author      Paul Vollmer
- * @modified    2012.04.02
- * @version     0.1.0
+ * @modified    2012.04.03
+ * @version     0.1.0b
  */
 
 
@@ -35,6 +35,13 @@
 #define DEBUG
 
 
+/* Default XML-Tag Names */
+#define DEFAULT_XMLTAG_MAIN "shortcut"
+#define DEFAULT_XMLTAG_ID "id"
+#define DEFAULT_XMLTAG_KEY "key"
+#define DEFAULT_XMLTAG_DESC "description"
+
+
 
 
 
@@ -42,30 +49,40 @@ namespace wng {
 	
 	class ofxShortcut{
 		
-	public:
-		/*
-		 * Constructor
-		 */
-		ofxShortcut();
+		public:
+			/**
+			 * Constructor
+			 */
+			ofxShortcut();
+	
 		
-		/*
-		 * Methods
-		 */
-		void init(string file, string mainTag, string idTag, string keyTag, string descTag);
-		void init(string file);
-		void parseXml(string mainTag, string idTag, string keyTag, string descTag);
-		void bitmapList(int x, int y);
-		bool checkKey(int k, int i);
+			/**
+			 * Methods
+			 */
+			void init(string file, string mainTag, string idTag, string keyTag, string descriptionTag);
+			void init(string file);
+			void init();
+			string list();
+			bool checkKey(int k, int i);
+			//void changeKey();
+			void saveXml(string file);
+			void saveXml();
 		
 		
-		/* openFrameworks xmlSettings addon */
-		ofxXmlSettings xml;
+			/**
+			 * Varables
+			 */
+			string filename;
+			vector<int> id;               // shortcut id integer
+			vector<int> key;              // shortcut key integer
+			vector<string> description;   // shortcut key string
 		
-		/* array to store shortcut key integer */
-		vector<int> ident;
-		vector<int> key;
-		vector<string> description;
 		
+		private:
+			void parseXml(string mainTag, string idTag, string keyTag, string descriptionTag);
+		
+			/* openFrameworks xmlSettings addon */
+			ofxXmlSettings xml;
 		
 	};
 	

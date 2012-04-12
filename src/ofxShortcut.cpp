@@ -39,13 +39,13 @@ namespace wng {
 		
 		filename = "shortcut.xml";
 		
-		#ifdef DEBUG
-			cout << "[ofxShortcut] Constructor" << endl;
+		#ifdef OFX_SHORTCUT_DEBUG
+			printf("[ofxShortcut] Constructor \n");
 			cout << "              Default filename: " << filename << endl;
-			cout << "              XML default Tags: main-tag = " << DEFAULT_XMLTAG_MAIN << endl;
-			cout << "                                id-tag   = " << DEFAULT_XMLTAG_ID << endl;
-			cout << "                                key-tag  = " << DEFAULT_XMLTAG_KEY << endl;
-			cout << "                                desc-tag = " << DEFAULT_XMLTAG_DESC << endl;
+			printf("              XML default Tags: main-tag = %s \n", DEFAULT_XMLTAG_MAIN);
+			printf("                                id-tag   = %s \n", DEFAULT_XMLTAG_ID);
+			printf("                                key-tag  = %s \n", DEFAULT_XMLTAG_KEY);
+			printf("                                desc-tag = %s \n", DEFAULT_XMLTAG_DESC);
 		#endif
 	}
 	
@@ -72,8 +72,8 @@ namespace wng {
 		/* we load our xml file
 		 * Examlple from openFrameworks xmlSettingsExample */
 		if( xml.loadFile(file) ){
-			#ifdef DEBUG 
-				cout << "[ofxShortcut] init()" << endl;
+			#ifdef OFX_SHORTCUT_DEBUG 
+				printf("[ofxShortcut] init() \n");
 				cout << "              XML File <" << file << "> loaded!" << endl;
 			#endif
 			
@@ -83,10 +83,10 @@ namespace wng {
 			/* Parse our loaded xml file and save key, description values to variable. */
 			parseXml(mainTag, idTag, keyTag, descriptionTag);
 		}else{
-			#ifdef DEBUG
-				cout << "[ofxShortcut] init()" << endl;
+			#ifdef OFX_SHORTCUT_DEBUG
+				printf("[ofxShortcut] init() \n");
 				cout << "              XML File unable to load <" << file << ">." << endl;
-				cout << "              ofxShortcut start creating default shortcut settings file." << endl;
+				printf("              ofxShortcut start creating default shortcut settings file. \n");
 			#endif
 			
 			/* create an empty file. */
@@ -171,7 +171,7 @@ namespace wng {
 	
 		xml.saveFile(file);
 		
-		#ifdef DEBUG
+		#ifdef OFX_SHORTCUT_DEBUG
 			cout << "[ofxShortcut] saveXml() Save file " << file << " Ready!" << endl;
 		#endif
 		
@@ -202,7 +202,7 @@ namespace wng {
 		
 		/* lets see how many <STROKE> </STROKE> tags there are in the xml file. */
 		int totalShortcut = xml.getNumTags(mainTag);
-		#ifdef DEBUG
+		#ifdef OFX_SHORTCUT_DEBUG
 			cout << "[ofxShortcut] parseXml() totalShortcut: " << totalShortcut << endl;
 		#endif
 		
@@ -227,7 +227,7 @@ namespace wng {
 				description.push_back("default");
 				description[i] = tempDesc;
 				
-				#ifdef DEBUG
+				#ifdef OFX_SHORTCUT_DEBUG
 					cout << "[ofxShortcut] parseXml() [" << i << "] [id: " << id[i] << "] [key: " << key[i] << "] [description: " << description[i] << "]" <<  endl;
 				#endif
 				

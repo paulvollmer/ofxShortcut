@@ -32,7 +32,7 @@
 #include "ofMain.h"
 #include "ofxXmlSettings.h"
 
-#define DEBUG
+#define OFX_SHORTCUT_DEBUG
 
 
 /* Default XML-Tag Names */
